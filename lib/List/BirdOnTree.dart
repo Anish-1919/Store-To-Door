@@ -92,7 +92,7 @@ class _BirdOnTreeState extends State<BirdOnTree> {
           backgroundColor: Colors.green,
           foregroundColor: Colors.white,
           onPressed: () => {total=0,
-            //print(sum()),
+            print(val),
             globals.tot=sum(),
             //print(globals.tot),
             Navigator.push(context,MaterialPageRoute(builder: (context)=> finals())),
@@ -106,6 +106,7 @@ class _BirdOnTreeState extends State<BirdOnTree> {
     for (var v in val) {
       if(v!=0 && v>0){
         k=val.indexOf(v);
+        print(k);
         total+= v * int.parse(price[k].substring(3));
       }
     }
