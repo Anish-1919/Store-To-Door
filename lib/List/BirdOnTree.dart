@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:store/final.dart';
 import '../globals.dart' as globals;
+import 'package:collection/collection.dart';
 
 class BirdOnTree extends StatefulWidget {
   const BirdOnTree({Key? key}) : super(key: key);
@@ -8,7 +9,6 @@ class BirdOnTree extends StatefulWidget {
   @override
   State<BirdOnTree> createState() => _BirdOnTreeState();
 }
-
 
 class _BirdOnTreeState extends State<BirdOnTree> {
 
@@ -54,6 +54,8 @@ class _BirdOnTreeState extends State<BirdOnTree> {
     "Baby Corn Cigar",
     "Chilly Parotta",
   ];
+  List<int> rate=[];
+  List<int> toPay=[];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,8 +93,9 @@ class _BirdOnTreeState extends State<BirdOnTree> {
           child: const Icon(Icons.shopping_cart),
           backgroundColor: Colors.green,
           foregroundColor: Colors.white,
-          onPressed: () => {total=0,
-            print(val),
+          onPressed: () => {toPay=[0,0,0,0,0,0,0,0,0,0,0],
+            total=0,
+            //print(val),
             globals.tot=sum(),
             //print(globals.tot),
             Navigator.push(context,MaterialPageRoute(builder: (context)=> finals())),
@@ -102,14 +105,16 @@ class _BirdOnTreeState extends State<BirdOnTree> {
 
   }
   int sum(){
-    int k=0;
-    for (var v in val) {
-      if(v!=0 && v>0){
-        k=val.indexOf(v);
-        print(k);
-        total+= v * int.parse(price[k].substring(3));
+    for(var i in price){
+        rate.add(int.parse(i.substring(3)));
+    }
+
+    for (var i=0;i<val.length;i++) {
+      if(val[i]!=0 && val[i]>0){
+        toPay.add(val[i]*rate[i]);
       }
     }
+    total=toPay.sum;
     return total;
   }
 }

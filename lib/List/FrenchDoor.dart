@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:store/final.dart';
 import '../globals.dart' as globals;
+import 'package:collection/collection.dart';
 
 class FrenchDoor extends StatefulWidget {
   const FrenchDoor({Key? key}) : super(key: key);
@@ -49,11 +50,13 @@ class _FrenchDoorState extends State<FrenchDoor> {
     "Rs.1850",
     "Rs.1300",
   ];
+  List<int> rate=[];
+  List<int> toPay=[];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:const Text("Bird on Tree"),
+        title:const Text("French Door "),
       ),
       body: ListView.separated(
         itemBuilder: (BuildContext, index){
@@ -86,8 +89,9 @@ class _FrenchDoorState extends State<FrenchDoor> {
           child: const Icon(Icons.shopping_cart),
           backgroundColor: Colors.green,
           foregroundColor: Colors.white,
-          onPressed: () => {total=0,
-            //print(sum()),
+          onPressed: () => {toPay=[0,0,0,0,0,0,0,0,0,0],
+            total=0,
+            //print(val),
             globals.tot=sum(),
             //print(globals.tot),
             Navigator.push(context,MaterialPageRoute(builder: (context)=> finals())),
@@ -97,13 +101,16 @@ class _FrenchDoorState extends State<FrenchDoor> {
 
   }
   int sum(){
-    int k=0;
-    for (var v in val) {
-      if(v!=0 && v>0){
-        k=val.indexOf(v);
-        total+= v * int.parse(price[k].substring(3));
+    for(var i in price){
+      rate.add(int.parse(i.substring(3)));
+    }
+
+    for (var i=0;i<val.length;i++) {
+      if(val[i]!=0 && val[i]>0){
+        toPay.add(val[i]*rate[i]);
       }
     }
+    total=toPay.sum;
     return total;
   }
 }

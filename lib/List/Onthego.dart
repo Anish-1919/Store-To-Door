@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:store/final.dart';
 import '../globals.dart' as globals;
+import 'package:collection/collection.dart';
 
 class Onthego extends StatefulWidget {
   const Onthego({Key? key}) : super(key: key);
@@ -48,11 +49,14 @@ class _OnthegoState extends State<Onthego> {
     "Rs.275",
     "Rs.300",
   ];
+
+  List<int> rate=[];
+  List<int> toPay=[];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:const Text("Bird on Tree"),
+        title:const Text("Onthego "),
       ),
       body: ListView.separated(
         itemBuilder: (BuildContext, index){
@@ -85,8 +89,9 @@ class _OnthegoState extends State<Onthego> {
           child: const Icon(Icons.shopping_cart),
           backgroundColor: Colors.green,
           foregroundColor: Colors.white,
-          onPressed: () => {total=0,
-            //print(sum()),
+          onPressed: () => {toPay=[0,0,0,0,0,0,0,0,0,0],
+            total=0,
+            //print(val),
             globals.tot=sum(),
             //print(globals.tot),
             Navigator.push(context,MaterialPageRoute(builder: (context)=> finals())),
@@ -96,13 +101,16 @@ class _OnthegoState extends State<Onthego> {
 
   }
   int sum(){
-    int k=0;
-    for (var v in val) {
-      if(v!=0 && v>0){
-        k=val.indexOf(v);
-        total+= v * int.parse(price[k].substring(3));
+    for(var i in price){
+      rate.add(int.parse(i.substring(3)));
+    }
+
+    for (var i=0;i<val.length;i++) {
+      if(val[i]!=0 && val[i]>0){
+        toPay.add(val[i]*rate[i]);
       }
     }
+    total=toPay.sum;
     return total;
   }
 }
