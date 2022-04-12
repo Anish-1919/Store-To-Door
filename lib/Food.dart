@@ -66,7 +66,7 @@ class _FoodState extends State<Food> {
                 height:500,
                 width: MediaQuery.of(context).size.width,
                 fadeInCurve:Curves.linearToEaseOut,
-                image: map['image'],
+                image: map["image"].toString(),
                 fit: BoxFit.cover,
             ),
           ),

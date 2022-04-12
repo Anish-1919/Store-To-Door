@@ -16,7 +16,7 @@ class finals extends StatelessWidget {
           decoration: const BoxDecoration(
             image: DecorationImage(
                 //scale:2,
-                image: NetworkImage('assets/bill.jpg')
+                image: AssetImage('assets/bill.jpg')
             ),
               gradient: LinearGradient(
                 begin: Alignment.topRight,
