@@ -35,7 +35,7 @@ class _StartState extends State<Start> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,  // add this
                     children: <Widget>[
                       ClipRRect(
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(6.0),
                           topRight: Radius.circular(6.0),
                         ),
@@ -47,7 +47,7 @@ class _StartState extends State<Start> {
 
                         ),
                       ),
-                      ListTile(
+                      const ListTile(
                         title: Text('Restaurants'),
                       ),
                     ],

@@ -36,7 +36,7 @@ class _FoodState extends State<Food> {
     return Scaffold(
       appBar: AppBar(
         title:Container(
-          decoration:BoxDecoration(
+          decoration:const BoxDecoration(
             gradient:LinearGradient(
               begin:Alignment.bottomRight,
               end:Alignment.bottomLeft,
@@ -46,7 +46,7 @@ class _FoodState extends State<Food> {
               ]
             ),
           ),
-          child:Text('STD Dish of the day  '),
+          child:const Text('STD Dish of the day  '),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
@@ -57,12 +57,8 @@ class _FoodState extends State<Food> {
           child: Container(
             height:MediaQuery.of(context).size.height,
             width:MediaQuery.of(context).size.width,
-            child: FadeInImage.assetNetwork(
-                placeholder: 'assets/loading.gif',
-                height:500,
-                width: MediaQuery.of(context).size.width,
-                fadeInCurve:Curves.linearToEaseOut,
-                image: map["image"].toString(),
+            child: Image.network(
+                map["image"],
                 fit: BoxFit.cover,
             ),
           ),
