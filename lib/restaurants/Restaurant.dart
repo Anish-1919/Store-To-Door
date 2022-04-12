@@ -91,7 +91,7 @@ class _RestaurantState extends State<Restaurant> {
               },
               child: Column(
                 children: <Widget>[
-                  Image.network(images[index]),
+                  Image.asset(images[index]),
                   const SizedBox(height: 10,),
                   Text(list[index], style: const TextStyle(
                     color: Colors.blue,

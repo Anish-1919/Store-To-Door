@@ -15,7 +15,7 @@ class _AboutState extends State<About> {
           width: 300,
           height: 200,
           color: Colors.pinkAccent,
-          padding: new EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           child: Card(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),

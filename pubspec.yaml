@@ -30,7 +30,6 @@ dependencies:
   get: ^4.6.1
   flutter:
     sdk: flutter
-  vertical_card_pager: ^1.4.0
   http: ^0.13.4
   carousel_slider: ^4.0.0
 

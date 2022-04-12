@@ -39,7 +39,7 @@ class _StartState extends State<Start> {
                           topLeft: Radius.circular(6.0),
                           topRight: Radius.circular(6.0),
                         ),
-                        child: Image.network(
+                        child: Image.asset(
                             'assets/1.jpg',
                             width: 150,
                             height: 250,
@@ -71,7 +71,7 @@ class _StartState extends State<Start> {
                           topLeft: Radius.circular(8.0),
                           topRight: Radius.circular(8.0),
                         ),
-                        child: Image.network(
+                        child: Image.asset(
                             'assets/2.jpg',
                             // width: 300,
                             height: 250,
