@@ -53,11 +53,7 @@ class _FoodState extends State<Food> {
         centerTitle:true,
       ),
       body: Container(
-        child: map == null ? Center(
-            child: CircularProgressIndicator(
-              backgroundColor: Colors.green,
-            ),
-        ) :Center(
+        child: Center(
           child: Container(
             height:MediaQuery.of(context).size.height,
             width:MediaQuery.of(context).size.width,

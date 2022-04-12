@@ -14,10 +14,6 @@ class finals extends StatelessWidget {
           height: MediaQuery.of(context).size.height * 30,
           width: MediaQuery.of(context).size.width * 50,
           decoration: const BoxDecoration(
-            image: DecorationImage(
-                //scale:2,
-                image: AssetImage('assets/bill.jpg')
-            ),
               gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
@@ -27,14 +23,19 @@ class finals extends StatelessWidget {
                 ],
               )
           ),
-            child: Text(
-              'Your Payable Amount is : '+(globals.tot).toString(),
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 48.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+            child: Column(
+                children:[
+                  Text('Your Payable Amount is : '+(globals.tot).toString(),
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 48.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Image.asset('assets/bill.jpg'),
+                ]
+
             ),
 
         ),
