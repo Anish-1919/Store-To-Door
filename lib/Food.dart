@@ -59,12 +59,11 @@ class _FoodState extends State<Food> {
             width:MediaQuery.of(context).size.width,
             child: Image.network(
                 map["image"],
-                fit: BoxFit.cover,
+                //fit: BoxFit.cover,
             ),
           ),
         )
       ),
-      extendBodyBehindAppBar: true,
     );
   }
 }

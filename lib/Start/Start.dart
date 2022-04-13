@@ -32,7 +32,7 @@ class _StartState extends State<Start> {
                     Navigator.push(context,MaterialPageRoute(builder: (context)=> const Restaurant()))
                   },
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,  // add this
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       ClipRRect(
                         borderRadius: const BorderRadius.only(
@@ -58,7 +58,7 @@ class _StartState extends State<Start> {
             Container(
               margin:EdgeInsets.all(8.0),
               child: Card(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8.0))),
+                //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8.0))),
                 child: InkWell(
                   onTap: () => {
                     Navigator.push(context,MaterialPageRoute(builder: (context)=> const Food()))
